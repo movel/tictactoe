@@ -1,0 +1,15 @@
+{
+  "name": "tic-tac-toe-freecodecamp",
+  "version": "1.0.0",
+  "description": "tic-tac-toe",
+  "main": "js/index.js",
+  "scripts": {
+    "compile:sass": "node-sass scss/style.scss css/style.css -w"
+  },
+  "author": "roman",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.7.2"
+  },
+  "dependencies": {}
+}
