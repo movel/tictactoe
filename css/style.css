@@ -176,10 +176,7 @@ a {
   display: grid;
   cursor: pointer;
   border-radius: 100%;
-  /*  https://codepen.io/iiil/pen/FAqjn?editors=0110  */
-  -webkit-box-shadow: 15px 0px 8px -3px rgba(3, 57, 108, 0.75);
-  -moz-box-shadow: 15px 0px 8px -3px rgba(3, 57, 108, 0.75);
-  box-shadow: 15px 0px 8px -3px rgba(3, 57, 108, 0.75); }
+  /*  https://codepen.io/iiil/pen/FAqjn?editors=0110  */ }
 
 .item_in {
   width: 101px;
