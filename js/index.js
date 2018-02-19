@@ -14,7 +14,7 @@ let selector, elems, makeActive;
 selector = '.item_in';
 elems = document.querySelectorAll(selector);
 
-humanClass.className += " border";
+computerClass.className += " border";
 document.querySelector('.x').className += " border";
 
 function hasClass(element, cls) {
