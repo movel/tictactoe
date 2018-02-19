@@ -162,8 +162,8 @@ function resetCheck() {
   start = true;
   play_as = "x";
   isX = true;
-  win.innerHTML = "";
-  win.className = "win";
+  win.innerHTML = "Winner is...";
+  win.className = "win opacity_on";
   
   setListeners();
   
