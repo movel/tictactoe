@@ -193,7 +193,6 @@ function xOrO(elm, mOver) {
     if ( !mOver ) { isX = true; }
   };
   
-  
 }
 
 function makeButtons() {
@@ -233,17 +232,28 @@ function isComputer() {
 
   let di = elems[ isMinMax() ];
 
-  // console.log(di);
+  console.log(di);
   
   di.className = "item_in opacity_off";
   
-  xOrO(di, false);
+  // console.log("isX: " + isX);
   
+  if(play_as === "o") {
+    di.innerHTML = "X";
+    isX = false;
+  }
+  else {
+    di.innerHTML = "O";
+    isX = true;
+  }
+
+  // xOrO(di, false);
+
   start = false;
   
   let id = +di.id;
   
-  console.log("id+isX " + id + " " + isX);
+  // console.log("id+isX " + id + " " + isX);
   
   elems[id].removeEventListener('mousedown', makeActive);
   elems[id].removeEventListener('mouseout', makeOut);
