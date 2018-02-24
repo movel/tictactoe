@@ -21,20 +21,20 @@ function hasClass(element, cls) {
 
 function isWinner(player) {
   
- if (
-   (elems[0].innerHTML == player && elems[1].innerHTML == player && elems[2].innerHTML == player) ||
-   (elems[3].innerHTML == player && elems[4].innerHTML == player && elems[5].innerHTML == player) ||
-   (elems[6].innerHTML == player && elems[7].innerHTML == player && elems[8].innerHTML == player) ||
-   (elems[0].innerHTML == player && elems[3].innerHTML == player && elems[6].innerHTML == player) ||
-   (elems[1].innerHTML == player && elems[4].innerHTML == player && elems[7].innerHTML == player) ||
-   (elems[2].innerHTML == player && elems[5].innerHTML == player && elems[8].innerHTML == player) ||
-   (elems[0].innerHTML == player && elems[4].innerHTML == player && elems[8].innerHTML == player) ||
-   (elems[2].innerHTML == player && elems[4].innerHTML == player && elems[6].innerHTML == player)
- ) {
-   return true;
- } else {
-   return false;
- }
+  if (
+    (elems[0].innerHTML == player && elems[1].innerHTML == player && elems[2].innerHTML == player) ||
+    (elems[3].innerHTML == player && elems[4].innerHTML == player && elems[5].innerHTML == player) ||
+    (elems[6].innerHTML == player && elems[7].innerHTML == player && elems[8].innerHTML == player) ||
+    (elems[0].innerHTML == player && elems[3].innerHTML == player && elems[6].innerHTML == player) ||
+    (elems[1].innerHTML == player && elems[4].innerHTML == player && elems[7].innerHTML == player) ||
+    (elems[2].innerHTML == player && elems[5].innerHTML == player && elems[8].innerHTML == player) ||
+    (elems[0].innerHTML == player && elems[4].innerHTML == player && elems[8].innerHTML == player) ||
+    (elems[2].innerHTML == player && elems[4].innerHTML == player && elems[6].innerHTML == player)
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function winner(player) {
@@ -170,7 +170,7 @@ function resetCheck() {
 
 function xOrO(elm, mOver) {
   
-  console.log("elm: " + elm.id);
+  // console.log("elm: " + elm.id);
   
   if( isX ) { 
     elm.innerHTML = "X";
