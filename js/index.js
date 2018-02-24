@@ -183,8 +183,6 @@ function resetCheck() {
 
 function xOrO(elm, mOver) {
   
-  // console.log("elm: " + elm.id);
-  
   if( isX ) { 
     elm.innerHTML = "X";
     if( !mOver ) { isX = false; }
