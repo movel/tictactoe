@@ -288,7 +288,7 @@ function isMinMax() {
 
     // checks for the terminal states such as win, lose, and tie and returning a value accordingly
     if (winning(newBoard, huPlayer)){
-       return {score:-10};
+      return {score:-10};
     }
     else if (winning(newBoard, aiPlayer)){
       return {score:10};
@@ -359,7 +359,7 @@ function isMinMax() {
 
   // winning combinations using the board indexies for instace the first win could be 3 xes in a row
   function winning(board, player){
-   if (
+    if (
           (board[0] == player && board[1] == player && board[2] == player) ||
           (board[3] == player && board[4] == player && board[5] == player) ||
           (board[6] == player && board[7] == player && board[8] == player) ||

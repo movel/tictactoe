@@ -107,10 +107,13 @@ a {
   -moz-box-shadow: 15px 0px 8px -3px rgba(3, 57, 108, 0.75);
   box-shadow: 15px 0px 8px -3px rgba(3, 57, 108, 0.75); }
 
+.header__title:hover {
+  color: #011f4b; }
+
 .opponent, .play_as {
   display: grid;
   text-align: center;
-  font-size: 36px;
+  font-size: 42px;
   align-content: start; }
 
 .buttons {
