@@ -1,7 +1,9 @@
 "use strict";
 
 let isX = true;
-let isHuman = true;
+let isO = false;
+let isHuman = false;
+let isComputerPlayer = true;
 let play_as = "x";
 let humanClass = document.querySelector('.human');
 let computerClass = document.querySelector('.computer');
@@ -103,7 +105,7 @@ function checkWinner() {
   
   if(lngth === 0 &&  !findWinner) {
     win.className = "win green";
-    win.innerHTML = "Game is Draw"; 
+    win.innerHTML = "Game is Draw";
   }
 }
 
@@ -158,14 +160,25 @@ function resetCheck() {
     elems[i].innerHTML = '';  
   }
   start = true;
-  play_as = "x";
-  isX = true;
+  // play_as = "x";
+  // isX = true;
+
+  if( play_as === "o") {
+    isX = false;
+  } else {
+    isX = true;
+  }
+
   win.innerHTML = "Winner is...";
   win.className = "win opacity_on";
   
+  console.log("resetCheck play_as: " + play_as);
+
   setListeners();
   
-  if(play_as === "o" && !isHuman) isComputer();
+  if(play_as === "o" && !isHuman) {
+    isComputer();
+  };
 }
 
 function xOrO(elm, mOver) {
@@ -183,35 +196,15 @@ function xOrO(elm, mOver) {
   
 }
 
-function isComputer() {  
-  
-  let di = elems[ isMinMax() ];
-  
-  di.className = "item_in opacity_off";
-  
-  xOrO(di, false);
-  
-  start = false;
-  
-  let id = +di.id;
-  
-  console.log(id + " " + isX);
-  
-  elems[id].removeEventListener('mousedown', makeActive);
-  elems[id].removeEventListener('mouseout', makeOut);
-  elems[id].removeEventListener('mouseover', makeOver); 
-  
-  checkWinner();
-
-};
-
 function makeButtons() {
   if( hasClass(this, 'human')) {
     computerClass.className = "button computer";
     isHuman = true;
+    isComputerPlayer = false;
   } else {
     humanClass.className = "button human";
     isHuman = false;
+    isComputerPlayer = true;
   }
   
   this.className += " border"; 
@@ -232,7 +225,33 @@ function makePlayAs() {
   }
   
   this.className += " border";
+
+  console.log("makePlayAs: " + play_as);
 }
+
+function isComputer() {  
+
+  let di = elems[ isMinMax() ];
+
+  // console.log(di);
+  
+  di.className = "item_in opacity_off";
+  
+  xOrO(di, false);
+  
+  start = false;
+  
+  let id = +di.id;
+  
+  console.log("id+isX " + id + " " + isX);
+  
+  elems[id].removeEventListener('mousedown', makeActive);
+  elems[id].removeEventListener('mouseout', makeOut);
+  elems[id].removeEventListener('mouseover', makeOver); 
+  
+  checkWinner();
+
+};
 
 function isMinMax() {
   // this is the board flattened and filled with some values to easier asses the Artificial Inteligence.
@@ -263,6 +282,8 @@ function isMinMax() {
     huPlayer = "O";
     aiPlayer = "X";
   }
+
+  console.log("isMinMax huPlayer: " + huPlayer);
   
   // ************************************** 
   // keep track of function calls
