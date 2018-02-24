@@ -1,7 +1,5 @@
 "use strict";
 
-// let brown = "#5000FF";
-
 let isX = true;
 let isHuman = true;
 let play_as = "x";
@@ -138,7 +136,7 @@ function makeOut() {
   this.className = "item_in opacity_off";
   this.innerHTML = '';
 }
-                 
+
 selector = '.oppo';
 let oppos = document.querySelectorAll(selector);
 for (let i = 0; i < oppos.length; i++) {

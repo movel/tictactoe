@@ -8,7 +8,7 @@
   box-sizing: border-box; }
 
 .green {
-  color: #3F6C45; }
+  color: #1cce34; }
 
 .red {
   color: #CB0000; }
@@ -42,7 +42,7 @@ a {
   margin: 0 20px;
   display: grid;
   grid-gap: 10px;
-  color: #943908; }
+  color: #ada4db; }
 
 .opacity_on {
   opacity: 0.2; }
@@ -121,7 +121,7 @@ a {
 .button {
   font-size: 2em;
   border-radius: 12px;
-  color: #943908;
+  color: #ada4db;
   opacity: 0.5;
   border: none;
   background-color: #011f4b;
