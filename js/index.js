@@ -74,7 +74,7 @@ function winner(player) {
 makeActive = function() { 
   this.className = "item_in opacity_off";
   start = false;
-  xOrO(this, false);
+  xOrO(this);
     
   let id = +this.id;
   
@@ -131,7 +131,14 @@ setListeners();
 
 function makeOver() {
   this.className = "item_in opacity_on";
-  xOrO(this, true);
+  
+  if( isX ) { 
+    this.innerHTML = "X";
+    isX = false;
+  } else { 
+    this.innerHTML = "O";
+    isX = true;
+  }; 
 }
 
 function makeOut() {
@@ -181,14 +188,14 @@ function resetCheck() {
   };
 }
 
-function xOrO(elm, mOver) {
+function xOrO(elm) {
   
   if( isX ) { 
     elm.innerHTML = "X";
-    if( !mOver ) { isX = false; }
+    // if( !mOver ) { isX = false; }
   } else { 
     elm.innerHTML = "O";
-    if ( !mOver ) { isX = true; }
+    // if ( !mOver ) { isX = true; }
   };
   
 }
