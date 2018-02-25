@@ -181,11 +181,11 @@ function resetCheck() {
   win.innerHTML = "Winner is...";
   win.className = "win opacity_on";
   
-  console.log("resetCheck play_as: " + play_as);
+  // console.log("resetCheck play_as: " + play_as);
 
   setListeners();
   
-  if(play_as === "o" && !isHuman) {
+  if(!isHuman) {
     isComputer();
   };
 }
@@ -194,10 +194,8 @@ function xOrO(elm) {
   
   if( isX ) { 
     elm.innerHTML = "X";
-    // if( !mOver ) { isX = false; }
   } else { 
     elm.innerHTML = "O";
-    // if ( !mOver ) { isX = true; }
   };
   
 }
@@ -215,7 +213,7 @@ function makeButtons() {
   
   this.className += " border"; 
   
-  if(play_as === "o" && !isHuman) isComputer();
+  if(!isHuman) isComputer();
   resetCheck();
 }
 
@@ -239,7 +237,7 @@ function isComputer() {
 
   let di = elems[ isMinMax() ];
 
-  console.log(di);
+  console.log("di: " + di);
   
   di.className = "item_in opacity_off";
   
