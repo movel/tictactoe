@@ -74,7 +74,14 @@ function winner(player) {
 makeActive = function() { 
   this.className = "item_in opacity_off";
   start = false;
-  xOrO(this);
+  // ex xOrO function
+  if( isX ) { 
+    this.innerHTML = "X";
+    isX = false;
+  } else { 
+    this.innerHTML = "O";
+    isX = true;
+  };
     
   let id = +this.id;
   
@@ -132,13 +139,8 @@ setListeners();
 function makeOver() {
   this.className = "item_in opacity_on";
   
-  if( isX ) { 
-    this.innerHTML = "X";
-    isX = false;
-  } else { 
-    this.innerHTML = "O";
-    isX = true;
-  }; 
+  // ex function xOrO
+  xOrO(this);
 }
 
 function makeOut() {
