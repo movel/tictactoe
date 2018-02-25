@@ -1,260 +1,268 @@
 /* http://www.color-hex.com/color-palette/1294 */
-$pine_tree : #0B071E;
+
+$pine_tree: #0B071E;
 $chamois: #011f4b;
-$anzac:  	#6497b1;
+$anzac : #6497b1;
 $brown: #ada4db;
 $desert: #b3cde0;
 $red: rgb(138, 7, 7);
 $green: rgb(3, 66, 11);
 $shadow: #03396c;
-
 $edge: 101px;
 
 /*  Remove border and padding  */
-:active, :hover, :focus {
-  outline: 0;
-  outline-offset: 0;
+
+:active,
+ :hover,
+ :focus {
+    outline: 0;
+    outline-offset: 0;
 }
 
-*, *:before, *:after {
-  box-sizing: border-box;
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
 }
 
 .green {
-  color: $green;
+    color: $green;
 }
 
 .red {
-  color: $red;
+    color: $red;
 }
 
-body, html {
-  margin: 40px;
-  font-family: 'Open Sans', sans-serif;
-  user-select: none;
-  background-color: $chamois;
+body,
+html {
+    margin: 40px;
+    font-family: 'Open Sans', sans-serif;
+    user-select: none;
+    background-color: $chamois;
 }
 
-h1, p {
-  margin: 10px 0 1em 0;
+h1,
+p {
+    margin: 10px 0 1em 0;
 }
 
 a {
-  text-decoration: none;
-  display: block;
-  margin: 0 auto;
-  color: $desert;
-  text-align: center;
-  font-family: 'Pacifico';
-  font-size: 5em;
+    text-decoration: none;
+    display: block;
+    margin: 0 auto;
+    color: $desert;
+    text-align: center;
+    font-family: 'Pacifico';
+    font-size: 5em;
 }
 
 .opponent {
-  grid-area: opponent;
+    grid-area: opponent;
 }
 
 .play_as {
-  grid-area: play_as;
+    grid-area: play_as;
 }
 
 .wrapper {
-  max-width: 940px;
-  margin: 0 20px;
-  display: grid;
-  grid-gap: 10px;
-  color: $brown; 
+    max-width: 940px;
+    margin: 0 20px;
+    display: grid;
+    grid-gap: 10px;
+    color: $brown;
 }
 
 .opacity_on {
-  opacity: 0.2;
+    opacity: 0.2;
 }
 
 .opacity_off {
-  opacity: 1;
+    opacity: 1;
 }
 
-@media only screen and (min-width: 500px)  {
-  /* no grid support? */
-  .sidebar {
-    float: left;
-    // width: 320px;
-  }
-
-  .content {
-    float: right;
-    // width: 100%;
-  }
-
-  .wrapper {
-    margin: 0 auto;
-    grid-template-columns: 400px 1fr;
-  }
-  
-  .header, .footer {
-    grid-column: 1 / -1;
-    /* needed for the floated layout */
-    clear: both;
-    line-height: 1.5;
-  }
+@media only screen and (min-width: 500px) {
+    /* no grid support? */
+    .sidebar {
+        float: left;
+        // width: 320px;
+    }
+    .content {
+        float: right;
+        // width: 100%;
+    }
+    .wrapper {
+        margin: 0 auto;
+        grid-template-columns: 400px 1fr;
+    }
+    .header,
+    .footer {
+        grid-column: 1 / -1;
+        /* needed for the floated layout */
+        clear: both;
+        line-height: 1.5;
+    }
 }
 
-.wrapper > * {
-  background-color: $anzac;
-  color: $desert;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 100%;
-  /* needed for the floated layout*/
-  margin-bottom: 10px;
+.wrapper>* {
+    background-color: $anzac;
+    color: $desert;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 100%;
+    /* needed for the floated layout*/
+    margin-bottom: 10px;
 }
+
 
 /* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
+
 @supports (display: grid) {
-  .wrapper > * {
-    width: auto;
-    margin: 0;
-  }
+    .wrapper>* {
+        width: auto;
+        margin: 0;
+    }
 }
 
 .box {
-  border-radius: 10px;
-  padding: 10px;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .sidebar {
-  display: grid;
-  grid-template-areas:
-    "opponent opponent"
-    "human computer"
-    "play_as play_as"
-    "x o";
-  align-content: start;
-  background-color: $anzac;
-  border: 4px dashed $desert;
-  color: $desert;
+    display: grid;
+    grid-template-areas: "opponent opponent" "human computer" "play_as play_as" "x o";
+    align-content: start;
+    background-color: $anzac;
+    border: 4px dashed $desert;
+    color: $desert;
 }
 
 .header {
-  display: grid;
-  align-content: start;
-  height: 160px;
+    display: grid;
+    align-content: start;
+    height: 160px;
 }
 
 .footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  // justify-content: space-around;
-  // justify-items: center;
-  height: 69px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // justify-content: space-around;
+    // justify-items: center;
+    height: 69px;
 }
 
 .shadow {
-  -webkit-box-shadow: 15px 0px 8px -3px rgba($shadow, 0.75);
-  -moz-box-shadow:    15px 0px 8px -3px rgba($shadow, 0.75);
-  box-shadow:         15px 0px 8px -3px rgba($shadow, 0.75);
+    -webkit-box-shadow: 15px 0px 8px -3px rgba($shadow, 0.75);
+    -moz-box-shadow: 15px 0px 8px -3px rgba($shadow, 0.75);
+    box-shadow: 15px 0px 8px -3px rgba($shadow, 0.75);
 }
 
 .header__title:hover {
-  color: $chamois;
+    color: $chamois;
 }
 
-.opponent, .play_as {
-  display: grid;
-  text-align: center;
-  font-size: 42px;
-  align-content: start; 
+.opponent,
+.play_as {
+    display: grid;
+    text-align: center;
+    font-size: 42px;
+    align-content: start;
 }
 
 .buttons {
-  grid-template-columns: 1fr 1fr;
-  align-content: start;
-  grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    align-content: start;
+    grid-gap: 10px;
 }
 
 .button {
-  font-size: 2em;
-  border-radius: 12px;
-  color: $brown;
-  opacity: 0.5;
-  border: none;
-  background-color: $chamois;
-  cursor: pointer;
+    font-size: 2em;
+    border-radius: 12px;
+    color: $brown;
+    opacity: 0.5;
+    border: none;
+    background-color: $chamois;
+    cursor: pointer;
 }
 
-.human, .computer {
-  width: 180px;
+.human,
+.computer {
+    width: 180px;
 }
 
-.x, .o {
-  width: 70px;
+.x,
+.o {
+    width: 70px;
 }
 
 .button_reset {
-  float: left;
+    float: left;
 }
 
-.human:hover, .computer:hover, .x:hover, .o:hover, .button_reset:hover {
-  border-color: $desert;
-  border-style: dashed;
-  background-color: $chamois;
-  color: $desert;
-  opacity: 1;
+.human:hover,
+.computer:hover,
+.x:hover,
+.o:hover,
+.button_reset:hover {
+    border-color: $desert;
+    border-style: dashed;
+    background-color: $chamois;
+    color: $desert;
+    opacity: 1;
 }
 
 .border {
-  border: 3px dashed $desert;
-  color: $desert;
-  opacity: 1;
+    border: 3px dashed $desert;
+    color: $desert;
+    opacity: 1;
 }
 
 .win {
-  margin: -10px 50px -10px 50px;
-  // float: right;
-  font-size: 2.5em;
-  font-weight: bold;
-  grid-gap: 10px;
-  // width: 100%;
-  // line-height: 1;
+    margin: -10px 50px -10px 50px;
+    // float: right;
+    font-size: 2.5em;
+    font-weight: bold;
+    grid-gap: 10px;
+    // width: 100%;
+    // line-height: 1;
 }
 
 .content {
-  margin: 0 auto;
-  padding: 10px;
-  display: grid;
-  grid-template-columns: repeat(3, $edge);
-  grid-auto-rows: repeat(3, $edge);
-  grid-gap: 20px;
-  justify-content: space-around;
-  align-items: center;
-  width: 360px;
-  height: 360px;
-  background-color: $anzac;
-  border-radius: 1em;
-  /*  https://codepen.io/iiil/pen/FAqjn?editors=0110  */
+    margin: 0 auto;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, $edge);
+    grid-auto-rows: repeat(3, $edge);
+    grid-gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+    width: 360px;
+    height: 360px;
+    background-color: $anzac;
+    border-radius: 1em;
+    /*  https://codepen.io/iiil/pen/FAqjn?editors=0110  */
 }
 
 .item {
-  background-color: $chamois;
-  justify-content: space-around;
-  align-self: center;
-  display: grid;
-  cursor: pointer;
-  border-radius: 100%;
-/*  https://codepen.io/iiil/pen/FAqjn?editors=0110  */
+    background-color: $chamois;
+    justify-content: space-around;
+    align-self: center;
+    display: grid;
+    cursor: pointer;
+    border-radius: 100%;
+    /*  https://codepen.io/iiil/pen/FAqjn?editors=0110  */
 }
 
 .item_in {
-  width: $edge;
-  height: $edge;
-  line-height: 1.2;
-  margin: 0px auto;
-  align-self: center;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 5em;
-  font-weight: bold;
-  // color: $desert;
-  text-align: center;
-  user-select: none;  
+    width: $edge;
+    height: $edge;
+    line-height: 1.2;
+    margin: 0px auto;
+    align-self: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 5em;
+    font-weight: bold;
+    // color: $desert;
+    text-align: center;
+    user-select: none;
 }
-
-

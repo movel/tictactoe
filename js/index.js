@@ -90,6 +90,10 @@ function winner(player) {
 makeActive = function() {
     this.className = "item_in opacity_off";
     start = false;
+
+    // *********************
+    // alert(this.id);
+
     // ex xOrO function
     if (isX) {
         this.innerHTML = "X";
@@ -107,7 +111,7 @@ makeActive = function() {
 
     checkWinner();
 
-    if (play_as === "o" && !isHuman) isComputer();
+    if (!isHuman) isComputer();
 }
 
 function checkWinner() {
@@ -185,8 +189,6 @@ function resetCheck() {
         elems[i].innerHTML = '';
     }
     start = true;
-    // play_as = "x";
-    // isX = true;
 
     if (play_as === "o") {
         isX = false;
@@ -197,13 +199,9 @@ function resetCheck() {
     win.innerHTML = "Winner is...";
     win.className = "win opacity_on";
 
-    // console.log("resetCheck play_as: " + play_as);
-
     setListeners();
 
-    if (!isHuman) {
-        isComputer();
-    };
+    if (play_as === "o" && !isHuman) isComputer();
 }
 
 function xOrO(elm) {
@@ -230,6 +228,7 @@ function makeButtons() {
     this.className += " border";
 
     if (!isHuman) isComputer();
+
     resetCheck();
 }
 
@@ -246,14 +245,14 @@ function makePlayAs() {
 
     this.className += " border";
 
-    console.log("makePlayAs: " + play_as);
+    resetCheck();
 }
 
 function isComputer() {
 
     let di = elems[isMinMax()];
 
-    console.log("di: " + di);
+    // console.log("di: " + di);
 
     di.className = "item_in opacity_off";
 
