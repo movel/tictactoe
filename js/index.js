@@ -177,7 +177,7 @@ for (let i = 0; i < plays.length; i++) {
 }
 
 selector = '.button_hint';
-let btn_hint = document.querySelectorAll(selector[0]);
+let btn_hint = document.querySelectorAll(selector)[0];
 btn_hint.addEventListener('mousedown', makeHint);
 
 selector = '.button_reset';
@@ -205,7 +205,28 @@ function resetCheck() {
 }
 
 function makeHint() {
-    isComputer();
+
+    let di = elems[isMinMax()];
+
+    di.className = "item_in opacity_off";
+
+    if (isX) {
+        di.innerHTML = "X";
+        isX = false;
+    } else {
+        di.innerHTML = "O";
+        isX = true;
+    }
+
+    start = false;
+
+    let id = +di.id;
+
+    elems[id].removeEventListener('mousedown', makeActive);
+    elems[id].removeEventListener('mouseout', makeOut);
+    elems[id].removeEventListener('mouseover', makeOver);
+
+    checkWinner();
 }
 
 function xOrO(elm) {
