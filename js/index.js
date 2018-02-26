@@ -1,7 +1,6 @@
 "use strict";
 
 let isX = true;
-let isO = false;
 let isHuman = false;
 let isComputerPlayer = true;
 let play_as = "x";
@@ -90,9 +89,6 @@ function winner(player) {
 makeActive = function() {
     this.className = "item_in opacity_off";
     start = false;
-
-    // *********************
-    // alert(this.id);
 
     // ex xOrO function
     if (isX) {
@@ -252,11 +248,7 @@ function isComputer() {
 
     let di = elems[isMinMax()];
 
-    // console.log("di: " + di);
-
     di.className = "item_in opacity_off";
-
-    // console.log("isX: " + isX);
 
     if (play_as === "o") {
         di.innerHTML = "X";
@@ -271,8 +263,6 @@ function isComputer() {
     start = false;
 
     let id = +di.id;
-
-    // console.log("id+isX " + id + " " + isX);
 
     elems[id].removeEventListener('mousedown', makeActive);
     elems[id].removeEventListener('mouseout', makeOut);
@@ -322,7 +312,7 @@ function isMinMax() {
     let bestSpot = minimax(origBoard, aiPlayer);
 
     //loging the results
-    console.log("best_index: " + bestSpot.index);
+    // console.log("best_index: " + bestSpot.index);
     // console.log("function calls: " + fc);
 
     return (bestSpot.index);
