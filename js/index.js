@@ -176,6 +176,10 @@ for (let i = 0; i < plays.length; i++) {
     plays[i].addEventListener('mousedown', makePlayAs);
 }
 
+selector = '.button_hint';
+let btn_hint = document.querySelectorAll(selector[0]);
+btn_hint.addEventListener('mousedown', makeHint);
+
 selector = '.button_reset';
 let btn_reset = document.querySelectorAll(selector)[0];
 btn_reset.addEventListener('mousedown', resetCheck);
@@ -198,6 +202,10 @@ function resetCheck() {
     setListeners();
 
     if (play_as === "o" && !isHuman) isComputer();
+}
+
+function makeHint() {
+    isComputer();
 }
 
 function xOrO(elm) {
