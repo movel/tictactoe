@@ -64,6 +64,10 @@ a {
     grid-area: play_as;
 }
 
+.hint {
+    grid-area: hint;
+}
+
 .wrapper {
     max-width: 940px;
     margin: 0 20px;
@@ -130,8 +134,8 @@ a {
 
 .sidebar {
     display: grid;
-    grid-template-areas: "opponent opponent" "human computer" "play_as play_as" "x o";
-    align-content: start;
+    grid-template-areas: "opponent opponent" "computer human" "hint hint" "play_as play_as" "x o";
+    align-content: center;
     background-color: $anzac;
     border: 4px dashed $desert;
     color: $desert;
@@ -169,8 +173,16 @@ a {
     align-content: start;
 }
 
+.hint {
+    text-align: center;
+}
+
+.lamp {
+    color: yellow;
+}
+
 .buttons {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 2fr;
     align-content: start;
     grid-gap: 10px;
 }
@@ -199,11 +211,18 @@ a {
     float: left;
 }
 
+.button_hint {
+    width: 180px;
+    border: 3px dashed $desert;
+    align-content: center;
+}
+
 .human:hover,
 .computer:hover,
 .x:hover,
 .o:hover,
-.button_reset:hover {
+.button_reset:hover,
+.button_hint:hover {
     border-color: $desert;
     border-style: dashed;
     background-color: $chamois;
