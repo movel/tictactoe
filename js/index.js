@@ -4,6 +4,7 @@ let isX = true;
 let isHuman = false;
 let isComputerPlayer = true;
 let play_as = "x";
+let hint = false;
 let humanClass = document.querySelector('.human');
 let computerClass = document.querySelector('.computer');
 let win = document.querySelector('.win');
@@ -208,6 +209,8 @@ function resetCheck() {
 
 function makeHint() {
 
+    hint = true;
+
     let di = elems[isMinMax()];
 
     di.className = "item_in opacity_off";
@@ -228,13 +231,15 @@ function makeHint() {
     elems[id].style.backgroundColor = "red";
     elems[id].style.borderRadius = "100%";
 
-    if (isX) {
-        // di.innerHTML = "X";
-        isX = false;
-    } else {
-        // di.innerHTML = "O";
-        isX = true;
-    }
+    hint = false;
+
+    // if (isX) {
+    //     // di.innerHTML = "X";
+    //     isX = false;
+    // } else {
+    //     // di.innerHTML = "O";
+    //     isX = true;
+    // }
 
     // elems[id].removeEventListener('mousedown', makeActive);
     // elems[id].removeEventListener('mouseout', makeOut);
@@ -343,6 +348,18 @@ function isMinMax() {
     } else {
         huPlayer = "O";
         aiPlayer = "X";
+    }
+
+    console.log("hint: " + hint + " isX: " + isX);
+
+    if (hint && isX) {
+        huPlayer = "O";
+        aiPlayer = "X";
+    }
+
+    if (hint && !isX) {
+        huPlayer = "X";
+        aiPlayer = "O";
     }
 
     console.log("isMinMax huPlayer: " + huPlayer);
