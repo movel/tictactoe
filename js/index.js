@@ -228,7 +228,7 @@ function makeHint() {
     let id = +di.id;
     // console.log('makeHint id: ' + id);
 
-    elems[id].style.backgroundColor = "red";
+    elems[id].style.backgroundColor = "#e60000";
     elems[id].style.borderRadius = "100%";
 
     hint = false;
