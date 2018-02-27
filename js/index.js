@@ -88,6 +88,8 @@ function winner(player) {
 
 makeActive = function() {
     this.className = "item_in opacity_off";
+    this.style.backgroundColor = "#011f4b";
+    this.style.borderRadius = "100%";
     start = false;
 
     // ex xOrO function
@@ -210,23 +212,35 @@ function makeHint() {
 
     di.className = "item_in opacity_off";
 
+    // if (isX) {
+    //     di.innerHTML = "X";
+    //     isX = false;
+    // } else {
+    //     di.innerHTML = "O";
+    //     isX = true;
+    // }
+
+    // start = false;
+
+    let id = +di.id;
+    // console.log('makeHint id: ' + id);
+
+    elems[id].style.backgroundColor = "red";
+    elems[id].style.borderRadius = "100%";
+
     if (isX) {
-        di.innerHTML = "X";
+        // di.innerHTML = "X";
         isX = false;
     } else {
-        di.innerHTML = "O";
+        // di.innerHTML = "O";
         isX = true;
     }
 
-    start = false;
+    // elems[id].removeEventListener('mousedown', makeActive);
+    // elems[id].removeEventListener('mouseout', makeOut);
+    // elems[id].removeEventListener('mouseover', makeOver);
 
-    let id = +di.id;
-
-    elems[id].removeEventListener('mousedown', makeActive);
-    elems[id].removeEventListener('mouseout', makeOut);
-    elems[id].removeEventListener('mouseover', makeOver);
-
-    checkWinner();
+    // checkWinner();
 }
 
 function xOrO(elm) {
