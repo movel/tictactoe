@@ -215,37 +215,12 @@ function makeHint() {
 
     di.className = "item_in opacity_off";
 
-    // if (isX) {
-    //     di.innerHTML = "X";
-    //     isX = false;
-    // } else {
-    //     di.innerHTML = "O";
-    //     isX = true;
-    // }
-
-    // start = false;
-
     let id = +di.id;
-    // console.log('makeHint id: ' + id);
 
     elems[id].style.backgroundColor = "#e60000";
     elems[id].style.borderRadius = "100%";
 
     hint = false;
-
-    // if (isX) {
-    //     // di.innerHTML = "X";
-    //     isX = false;
-    // } else {
-    //     // di.innerHTML = "O";
-    //     isX = true;
-    // }
-
-    // elems[id].removeEventListener('mousedown', makeActive);
-    // elems[id].removeEventListener('mouseout', makeOut);
-    // elems[id].removeEventListener('mouseover', makeOver);
-
-    // checkWinner();
 }
 
 function xOrO(elm) {
@@ -306,8 +281,6 @@ function isComputer() {
         isX = true;
     }
 
-    // xOrO(di, false);
-
     start = false;
 
     let id = +di.id;
@@ -350,8 +323,7 @@ function isMinMax() {
         aiPlayer = "X";
     }
 
-    console.log("hint: " + hint + " isX: " + isX);
-
+    // ************** HINT **************
     if (hint && isX) {
         huPlayer = "O";
         aiPlayer = "X";
@@ -362,7 +334,7 @@ function isMinMax() {
         aiPlayer = "O";
     }
 
-    console.log("isMinMax huPlayer: " + huPlayer);
+    // console.log("isMinMax huPlayer: " + huPlayer);
 
     // ************************************** 
     // keep track of function calls
